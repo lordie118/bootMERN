@@ -9,6 +9,17 @@ export async function addUser(user){
     
     return await http.post('/tasks/create',data)
  }
+ export async function EditTask(id,data){
+    
+   return await http.post(`/update/${id}`,data)
+}
+
+
+
+
+
+
+
 
 export async function logIn(user){
     return await http.post('/users/signup',user)

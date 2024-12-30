@@ -46,7 +46,7 @@ const ChatbotWidget = () => {
     
 
     return (
-        <div className={`chatbot-widget ${isOpen ? "open" : "closed"}`}>
+        <div className={`chatbot-widget ${isOpen ? "open" : "closed"}`} >
             {/* Bouton pour ouvrir/fermer le chatbot */}
             <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
                 {isOpen ? "–" : "💬"}
