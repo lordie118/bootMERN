@@ -2,7 +2,7 @@ import React, { useState  } from 'react'
 import { logIn } from '../Service/LoginService'
 import toast, { Toaster } from 'react-hot-toast'
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Form() {
   const [email , setEmail] = useState()
@@ -67,7 +67,7 @@ function Form() {
         </div>
         <div className='mt-8 flex justify-center items-center'>
             <p className='font-medium text-base'>Don't have an account</p>
-            <button className='text-blue-700 text-base font-medium ml-2' >Sign Up</button>
+            <Link to="/sign"> <button className='text-blue-700 text-base font-medium ml-2' >Sign Up</button></Link>
         </div>
         </form>
     </div>

@@ -8,6 +8,7 @@ const TaskSchema = new mongoose.Schema({
     dueDate: Date,
     priority: { type: String, enum: ["Low", "Medium", "High"], default: "Low" },
     status: { type: String, enum: ["Pending", "Completed"], default: "Pending" },
+    imageUrl: String,
     // shortId: { type: String,unique: true  ,default: shortid.generate }, 
 
 })

@@ -232,6 +232,7 @@ const TaskExemple = () => {
                             <th scope="col" class="px-4 py-3">dueDate</th>
                             <th scope="col" class="px-4 py-3">priority</th>
                             <th scope="col" class="px-4 py-3">status</th>
+                            <th scope="col" class="px-4 py-3">Image</th>
                             <th scope="col" class="px-4 py-3">Actions</th>
                            
                         </tr>
@@ -239,7 +240,7 @@ const TaskExemple = () => {
                     <tbody>
                     {tasks.length === 0 ? (
                 <tr>
-                    <td colSpan="6" class="text-center">Aucune tâche trouvée.</td>
+                    <td colSpan="8" class="text-center">Aucune tâche trouvée.</td>
                 </tr>
             ) : (
                 tasks.map((t) => (
@@ -250,8 +251,16 @@ const TaskExemple = () => {
                         <td class="px-4 py-3">{t.title}</td> {/* Display the description */}
                         <td class="px-4 py-3">{t.description}</td> {/* Display the description */}
                         <td class="px-4 py-3">{t.dueDate}</td> {/* Display the due date */}
-                        <td class="px-4 py-3">{t.priority}</td> {/* Display the priority */}
+                        <td class="px-4 py-3">
+                          {t.priority}
+                          {t.priority === 'High' && <span className="ml-2 text-red-500">●</span>}
+                          {t.priority === 'Medium' && <span className="ml-2 text-green-500">●</span>}
+                          {t.priority === 'Low' && <span className="ml-2 text-yellow-500">●</span>}
+                        </td>
                         <td class="px-4 py-3">{t.status}</td> {/* Display the status */}
+                        <td class="px-4 py-3">
+                          {t.imageUrl && <img src={`http://localhost:1000${t.imageUrl}`} alt={t.title} className="w-16 h-16 object-cover rounded" />}
+                        </td>
                         <td class="px-4 py-3 flex items-center justify-end space-x-7">
                         <button 
                                onClick={()=>handleEdit(t._id)} 
