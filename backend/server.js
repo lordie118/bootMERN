@@ -20,6 +20,8 @@ app.use('/tasks' , TaskRouter)
 
 app.use('/openai', OpenaiRouter );
 
+// Serve static files from the uploads directory
+app.use('/uploads', express.static('uploads'));
 
 db.on("error",console.error.bind(console , "connection error :"))
 db.once("open", function(){

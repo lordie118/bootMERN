@@ -40,6 +40,8 @@ const TaskExemple = () => {
       };
       const handleEditAdded = (newTaskData) => {
         dispatch(editTask(newTaskData));
+            dispatch(fetchTasks(filters)); 
+        
       };
 
     const handleEdit = (taskId) => {
@@ -243,10 +245,10 @@ const TaskExemple = () => {
                     <td colSpan="8" class="text-center">Aucune tâche trouvée.</td>
                 </tr>
             ) : (
-                tasks.map((t) => (
+                tasks.map((t,index) => (
                     <tr class="border-b dark:border-gray-700" key={t.id}>  {/* Assuming each task has an id */}
                         <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {t._id} {/* Display the task name */}
+                            {t.index} {/* Display the task name */}
                         </th>
                         <td class="px-4 py-3">{t.title}</td> {/* Display the description */}
                         <td class="px-4 py-3">{t.description}</td> {/* Display the description */}

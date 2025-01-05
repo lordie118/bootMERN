@@ -14,17 +14,26 @@
     height: 50px;
     font-size: 1.5rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.chatbot-toggle:hover {
+    background-color: #0056b3;
 }
 
 .chatbot-window {
     width: 300px;
     height: 400px;
     background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
 .chatbot-header {
@@ -34,6 +43,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #0056b3;
+}
+
+.chatbot-header h4 {
+    margin: 0;
+}
+
+.chatbot-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .chatbot-messages {
@@ -47,21 +69,26 @@
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
+    max-width: 80%;
+    word-wrap: break-word;
 }
 
 .user-message {
     background-color: #d1ecf1;
     align-self: flex-end;
+    border: 1px solid #bee5eb;
 }
 
 .bot-message {
     background-color: #f8d7da;
     align-self: flex-start;
+    border: 1px solid #f5c6cb;
 }
 
 .chatbot-input {
     display: flex;
     border-top: 1px solid #ddd;
+    background-color: #f1f1f1;
 }
 
 .chatbot-input input {
@@ -69,6 +96,8 @@
     padding: 10px;
     border: none;
     outline: none;
+    border-radius: 0 0 0 10px;
+    background-color: #fff;
 }
 
 .chatbot-input button {
@@ -77,4 +106,34 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 0 0 10px 0;
+    transition: background-color 0.3s;
+}
+
+
+.chatbot-input button:hover {
+    background-color: #0056b3;
+}
+
+.chatbot-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+
+.chatbot-suggestions button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chatbot-suggestions button:hover {
+    background-color: #0056b3;
 }
