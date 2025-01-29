@@ -5,11 +5,20 @@ import 'flowbite';
 
 import TaskExemple from './component/TaskExemple';
 import PrivateRoute from './middlewear/PrivateRoute';
+import PresntationPage from './component/Test/PresntationPage';
+import ContactUs from './component/Test/ContactUs';
+import Ressources from './component/Test/Ressources';
+import Legals from './component/Test/Legals';
+import Navbar from './component/Test/Navbar';
+
+
+
 
 
 function App() {
   return (
 <div className=''>
+  <Navbar />
   <BrowserRouter>
 
    <Routes>
@@ -17,6 +26,10 @@ function App() {
 
     <Route path='/login' element={<Login />} />
     <Route path='/sign' element={<SignUp />} />
+    <Route path='/pp' element={<PresntationPage />} />
+    <Route path='/contact' element={<ContactUs />} />
+    <Route path='/ressources' element={<Ressources />} />
+    <Route path='/legals' element={<Legals />} />
 
     <Route element={<PrivateRoute />}>
     <Route path='/home' element={<TaskExemple />} />
