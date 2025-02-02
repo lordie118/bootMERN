@@ -6,10 +6,13 @@ import 'flowbite';
 import TaskExemple from './component/TaskExemple';
 import PrivateRoute from './middlewear/PrivateRoute';
 import PresntationPage from './component/Test/PresntationPage';
-import ContactUs from './component/Test/ContactUs';
-import Ressources from './component/Test/Ressources';
+
 import Legals from './component/Test/Legals';
 import Navbar from './component/Test/Navbar';
+import { ContactUs } from './component/Test/ContactUs';
+import { Ressources } from './component/Test/Ressources';
+import { ServicesPage } from './component/Test/ServicePage';
+
 
 
 
@@ -18,8 +21,9 @@ import Navbar from './component/Test/Navbar';
 function App() {
   return (
 <div className=''>
-  <Navbar />
   <BrowserRouter>
+  <Navbar />
+  
 
    <Routes>
 
@@ -30,6 +34,7 @@ function App() {
     <Route path='/contact' element={<ContactUs />} />
     <Route path='/ressources' element={<Ressources />} />
     <Route path='/legals' element={<Legals />} />
+    <Route path='/services' element={<ServicesPage />} />
 
     <Route element={<PrivateRoute />}>
     <Route path='/home' element={<TaskExemple />} />

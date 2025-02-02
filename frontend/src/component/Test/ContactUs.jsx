@@ -1,116 +1,161 @@
-import React from 'react';
-import {
-  AppBar,
-  Box,
-  Container,
-  Grid,
-  Paper,
-  TextField,
-  Typography,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  Toolbar,
-} from '@mui/material';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useState } from 'react';
 
-function ContactUs(){
+export function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = () => {
+   
+    console.log(formData);
+  };
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      {/* Navigation */}
-      <AppBar position="static" sx={{ backgroundColor: '#80CBC4', marginBottom: 4 }}>
-        <Toolbar>
-          <Grid container spacing={2}>
-            {['Page1', 'Page2', 'Page3', 'Page4', 'Page5', 'Page6'].map((page) => (
-              <Grid item key={page}>
-                <Button color="inherit">{page}</Button>
-              </Grid>
-            ))}
-          </Grid>
-        </Toolbar>
-      </AppBar>
+    <div className="min-h-screen ">
+      {/* Hero Section */}
+      <div className="relative h-[40vh] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#ffe564]/90 to-[#9fb608]/90 z-10" />
+       
+        <div className="relative z-20 h-full flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold text-white mb-4">Contactez-Nous</h1>
+            <p className="text-slate-200 text-lg max-w-2xl mx-auto px-4">
+              Notre équipe est là pour vous aider. N'hésitez pas à nous contacter pour toute question.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <Container maxWidth="lg">
-        {/* Contact Us Image Section */}
-        <Paper 
-          elevation={0} 
-          sx={{ 
-            p: 4, 
-            mb: 4, 
-            textAlign: 'center',
-            backgroundImage: 'url(https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: '400px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <Typography variant="h2" component="h1" sx={{ color: '#f44336', fontWeight: 'bold' }}>
-            CONTACT US
-          </Typography>
-        </Paper>
+      {/* Contact Form Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Contact Form */}
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-[#ffe564] to-[#9fb608] bg-clip-text text-transparent">
+                Contactez L'A.M.A.M.E
+              </h2>
+              <p className="text-gray-600 mt-2">
+                Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+              </p>
+            </div>
 
-        {/* Contact Form */}
-        <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <TextField fullWidth label="Name" variant="outlined" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField fullWidth label="Email" variant="outlined" />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Message"
-                multiline
-                rows={4}
-                variant="outlined"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button variant="contained" sx={{ backgroundColor: '#80CBC4' }}>
-                Send Message
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Nom complet
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#9fb608] focus:border-transparent transition-all duration-200"
+                  placeholder="Votre nom"
+                  required
+                />
+              </div>
 
-        {/* Contact Info */}
-        <Paper sx={{ p: 4, mb: 4, backgroundColor: '#f5f5f5' }}>
-          <Typography variant="h5" component="h2" sx={{ mb: 3, textAlign: 'center' }}>
-            CONTACT INFO
-          </Typography>
-          <Grid container spacing={3} justifyContent="center">
-            <Grid item xs={12} md={4}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Phone size={24} />
-                <Typography sx={{ ml: 1 }}>+1 234 567 890</Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Mail size={24} />
-                <Typography sx={{ ml: 1 }}>contact@example.com</Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <MapPin size={24} />
-                <Typography sx={{ ml: 1 }}>123 Street, City, Country</Typography>
-              </Box>
-            </Grid>
-          </Grid>
-        </Paper>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#9fb608] focus:border-transparent transition-all duration-200"
+                  placeholder="votre@email.com"
+                  required
+                />
+              </div>
 
-        {/* Footer */}
-        
-      </Container>
-    </Box>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  rows={6}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#9fb608] focus:border-transparent transition-all duration-200"
+                  placeholder="Votre message..."
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-[#ffe564] to-[#9fb608] text-white py-3 px-6 rounded-lg hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
+              >
+                <Send className="w-4 h-4" />
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h3 className="text-xl font-semibold mb-6">Informations de contact</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-yellow-100">
+                    <Phone className="w-6 h-6 text-[#9fb608]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Téléphone</h4>
+                    <p className="text-gray-600">+1 234 567 890</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-green-100">
+                    <Mail className="w-6 h-6 text-[#9fb608]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Email</h4>
+                    <p className="text-gray-600">contact@example.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-yellow-100">
+                    <MapPin className="w-6 h-6 text-[#9fb608]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Adresse</h4>
+                    <p className="text-gray-600">123 Street, City, Country</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h3 className="text-xl font-semibold mb-6">Heures d'ouverture</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Lundi - Vendredi</span>
+                  <span className="font-medium">9:00 - 18:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Samedi</span>
+                  <span className="font-medium">10:00 - 15:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Dimanche</span>
+                  <span className="font-medium text-[#9fb608]">Fermé</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
-
-export default ContactUs;

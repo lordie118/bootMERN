@@ -238,78 +238,113 @@
 // }
 
 // export default Ressources;
+import { Play, ChevronRight } from 'lucide-react';
 
-function Ressources() {
+export function Ressources() {
   return (
-<div>
-  
-<section class="bg-gradient-to-br from-yellow-200 to-green-600 py-16 md:py-32">
-   
-   <div class="container mx-auto px-4 md:px-8 text-center">
-       <h1 class="text-white font-bold text-4xl md:text-6xl leading-tight mb-6">A.M.A.M.A.E.M</h1>
-       <p class="text-white text-lg md:text-2xl mb-12">Experience the 
-           services.</p>
-       
-   </div>
-</section>
-<div class="max-w-screen-lg mx-auto p-5 sm:p-10 md:p-16">
-
- 
-
-    
-    <div class="mb-10 rounded overflow-hidden flex flex-col mx-auto">
-        <a href="#"
-            class="text-xl sm:text-4xl font-semibold inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
-            Best Activewear from the Nordstrom Anniversary Sale</a>
-            <p class="text-gray-700 py-5 text-base leading-8">
-            Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above sea
-            level. It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru, above the Sacred
-            Valley, which is 80 kilometres (50 mi) northwest of Cuzco and through which the Urubamba River flows.
-        </p>
-
-        <div class="relative" className="rounded-3xl overflow-hidden flex flex-col mx-auto">
-            <a href="#">
-                <img class="w-full"
-                    src="https://images.pexels.com/photos/5120892/pexels-photo-5120892.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=625.0&amp;sharp=10&amp;w=1500"
-                    alt="Sunset in the mountains" />
-            </a>
-          
+    <div className="min-h-screen bg-white">
+      {/* Hero Section with Large Image */}
+      <div className="relative h-[70vh] bg-gradient-to-r from-yellow-300 to-green-500">
+        <div className="absolute inset-0 bg-black/30" />
+        <img 
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+          alt="Team collaboration"
+          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+        />
+        <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-7xl font-bold text-white mb-6">
+            A.M.A.M.A.E.M
+          </h1>
+          <p className="text-xl text-white/90 max-w-2xl">
+            Experience the services.
+          </p>
         </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-24">
+        {/* Featured Videos Section */}
+        <div className="space-y-24">
+          {/* Video Section 1 */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-4xl font-bold text-gray-900">
+                The Best Activewear from the Nordstrom Anniversary Sale
+              </h2>
+              <p className="text-lg text-gray-600">
+                Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above sea level. It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru, above the Sacred Valley.
+              </p>
        
-        
-        
+            </div>
+            <div className="relative aspect-video rounded-2xl overflow-hidden group">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+              <img
+                src="https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="Video thumbnail"
+                className="w-full h-full object-cover"
+              />
+              <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm p-6 rounded-full hover:bg-white/30 transition-colors group-hover:scale-110 duration-300">
+                <Play className="w-8 h-8 text-white" />
+              </button>
+            </div>
+          </div>
 
-    </div>
-    <div class="mb-10 rounded overflow-hidden flex flex-col mx-auto">
-        <a href="#"
-            class="text-xl sm:text-4xl font-semibold inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
-            Best Activewear from the Nordstrom Anniversary Sale</a>
-            <p class="text-gray-700 py-5 text-base leading-8">
-            Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above sea
-            level. It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru, above the Sacred
-            Valley, which is 80 kilometres (50 mi) northwest of Cuzco and through which the Urubamba River flows.
-        </p>
-
-        <div class="relative" className="rounded-3xl overflow-hidden flex flex-col mx-auto">
-            <a href="#">
-                <img class="w-full"
-                    src="https://images.pexels.com/photos/5120892/pexels-photo-5120892.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=625.0&amp;sharp=10&amp;w=1500"
-                    alt="Sunset in the mountains" />
-            </a>
-          
+          {/* Video Section 2 */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative aspect-video rounded-2xl overflow-hidden group order-2 lg:order-1">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+              <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="Video thumbnail"
+                className="w-full h-full object-cover"
+              />
+              <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm p-6 rounded-full hover:bg-white/30 transition-colors group-hover:scale-110 duration-300">
+                <Play className="w-8 h-8 text-white" />
+              </button>
+            </div>
+            <div className="space-y-8 order-1 lg:order-2">
+              <h2 className="text-4xl font-bold text-gray-900">
+                The Best Activewear from the Nordstrom Anniversary Sale
+              </h2>
+              <p className="text-lg text-gray-600">
+                Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above sea level. It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru, above the Sacred Valley.
+              </p>
+             
+            </div>
+          </div>
         </div>
-       
-        
-        
 
+        {/* More Videos Grid */}
+        <div className="mt-32">
+          <h2 className="text-4xl font-bold text-gray-900 mb-16 text-center">
+            More Resources
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="group">
+                <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+                  <img
+                    src={`https://images.unsplash.com/photo-${item === 1 ? '1517245386807-bb43f82c33c4' : item === 2 ? '1483721310020-03333e577078' : '1522202176988-66273c2fd55f'}?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80`}
+                    alt="Video thumbnail"
+                    className="w-full h-full object-cover"
+                  />
+                  <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm p-4 rounded-full hover:bg-white/30 transition-colors group-hover:scale-110 duration-300">
+                    <Play className="w-6 h-6 text-white" />
+                  </button>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Video Title {item}
+                </h3>
+                <p className="text-gray-600">
+                  Short description of the video content goes here.
+                </p>
+              </div>
+            ))}
+          </div>
+         
+        </div>
+      </div>
     </div>
-
-    
-
-
-</div>
-</div>
-  )
+  );
 }
-
-export default Ressources;

@@ -36,7 +36,7 @@ const theme = createTheme({
     h1: {
       fontSize: '2.5rem',
       fontWeight: 700,
-      background: 'linear-gradient(45deg, #0019A5 30%, #2196f3 90%)',
+      background: 'linear-gradient(to right, #ffe564, #9fb608)' ,
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       marginBottom: '2rem',
@@ -44,7 +44,7 @@ const theme = createTheme({
     h2: {
       fontSize: '1.8rem',
       fontWeight: 600,
-      color: '#0019A5',
+      color: '#9fb608',
       marginTop: '2.5rem',
       marginBottom: '1.5rem',
     },
@@ -116,7 +116,8 @@ function ScrollTop() {
           size="small"
           aria-label="scroll back to top"
           sx={{
-            background: 'linear-gradient(45deg, #0019A5 30%, #2196f3 90%)',
+            background: 'linear-gradient(to right, #ffe564, #9fb608)' ,
+
             color: 'white',
           }}
         >
@@ -133,7 +134,7 @@ function Legals() {
       <CssBaseline />
       
       {/* Header */}
-      <AppBar 
+      {/* <AppBar 
         position="sticky" 
         sx={{ 
           background: 'rgba(255,255,255,0.8)',
@@ -179,7 +180,7 @@ function Legals() {
             </IconButton>
           </Toolbar>
         </Container>
-      </AppBar>
+      </AppBar> */}
 
       {/* Main Content */}
       <Container maxWidth="lg" sx={{ py: 6 }}>
@@ -194,11 +195,11 @@ function Legals() {
           
           <Box sx={{ maxWidth: '800px', mx: 'auto' }}>
             <Typography paragraph>
-              Le site d'AXA Assurance Maroc, est un site d'information qui s'adresse aussi bien aux clients d'AXA Assurance Maroc, qu'aux non-clients.
+              Le site d'AMAME Assurance Maroc, est un site d'information qui s'adresse aussi bien aux clients d'AMAMAEMaroc, qu'aux non-clients.
             </Typography>
 
             <Typography paragraph>
-              Les informations contenues sur le site <Link>www.axa.ma</Link> ont un caractère strictement informatif, elles n'emportent aucun engagement juridique ni accord contractuel de la part d'AXA Assurance Maroc qui se réserve par ailleurs la faculté d'en modifier les caractéristiques.
+              Les informations contenues sur le site <Link>www.AMAME.ma</Link> ont un caractère strictement informatif, elles n'emportent aucun engagement juridique ni accord contractuel de la part d'AMAMAE Assurance Maroc qui se réserve par ailleurs la faculté d'en modifier les caractéristiques.
             </Typography>
 
             <Divider sx={{ my: 4 }} />
@@ -206,7 +207,7 @@ function Legals() {
             <Typography variant="h2">Présentation générale</Typography>
 
             <Typography paragraph>
-              Vous êtes actuellement connecté au site "www.axa.ma" qui est édité par AXA Assurance Maroc.
+              Vous êtes actuellement connecté au site "www.AMAME.com" qui est édité par AMAME Assurance Maroc.
             </Typography>
 
             <Paper 
@@ -221,12 +222,12 @@ function Legals() {
             >
               <List>
                 {[
-                  "Dénomination sociale : AXA Assurance Maroc.",
-                  "Représentant légal : Meryem CHAMI – Directeur Général.",
-                  "Société anonyme au capital de : 900.000.000 DHS (au 31 décembre 2013).",
-                  "RC Casablanca : 34221.",
-                  "Siège Social : 120/122, Avenue Hassan II. 20 000 Casablanca.",
-                  "Directeur de la publication : Direction Stratégie et Distribution d'AXA Assurance Maroc."
+                  "Dénomination sociale : AMAME  Maroc.",
+                  "Représentant légal : ",
+                  "Société anonyme au capital de : .",
+                  "RC Casablanca : .",
+                  "Siège Social :.",
+                  "Directeur de la publication : "
                 ].map((text, index) => (
                   <ListItem key={index} sx={{ py: 1 }}>
                     <ListItemText 
@@ -244,6 +245,44 @@ function Legals() {
             </Paper>
 
             <Typography variant="h2">Droit de propriété intellectuelle</Typography>
+            <Typography paragraph>
+              Vous êtes actuellement connecté au site "www.AMAME.com" qui est édité par AMAME Assurance Maroc.
+            </Typography>
+
+            <Paper 
+              elevation={0} 
+              sx={{ 
+                p: 3, 
+                background: 'rgba(0,25,165,0.02)',
+                border: '1px solid rgba(0,25,165,0.1)',
+                borderRadius: 2,
+                mb: 4,
+              }}
+            >
+              <List>
+                {[
+                  "Dénomination sociale : AMAME  Maroc.",
+                  "Représentant légal : ",
+                  "Société anonyme au capital de : .",
+                  "RC Casablanca : .",
+                  "Siège Social :.",
+                  "Directeur de la publication : "
+                ].map((text, index) => (
+                  <ListItem key={index} sx={{ py: 1 }}>
+                    <ListItemText 
+                      primary={text}
+                      primaryTypographyProps={{
+                        sx: { 
+                          fontSize: '0.95rem',
+                          color: '#2c3e50',
+                        }
+                      }}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            </Paper>
+            
           </Box>
         </Paper>
       </Container>
@@ -253,12 +292,12 @@ function Legals() {
   );
 }
 
-const Link = ({ children }: { children: React.ReactNode }) => (
+const Link = () => (
   <Typography
     component="a"
     href="#"
     sx={{
-      background: 'linear-gradient(45deg, #0019A5 30%, #2196f3 90%)',
+      background: 'linear-gradient(to right, #ffe564, #9fb608)' ,
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       textDecoration: 'none',
@@ -268,7 +307,7 @@ const Link = ({ children }: { children: React.ReactNode }) => (
       },
     }}
   >
-    {children}
+
   </Typography>
 );
 
