@@ -73,6 +73,20 @@ export function ContactUs() {
                   required
                 />
               </div>
+              {/* <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#9fb608] focus:border-transparent transition-all duration-200"
+                  placeholder="votre@email.com"
+                  required
+                />
+              </div> */}
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
